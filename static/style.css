@@ -1,0 +1,9 @@
+body { font-family: Arial, sans-serif; background: #f4f7f6; margin: 0; padding: 20px; }
+.dashboard { max-width: 900px; margin: auto; }
+h1 { text-align: center; color: #2c3e50; }
+.metrics { display: flex; justify-content: space-between; gap: 15px; margin-bottom: 30px; }
+.card { background: white; padding: 20px; border-radius: 8px; flex: 1; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+.card h3 { margin: 0; color: #7f8c8d; font-size: 14px; }
+.card p { margin: 10px 0 0; font-size: 24px; font-weight: bold; color: #2c3e50; }
+.highlight p { color: #27ae60; }
+.chart-container { background: white; padding: 20px; border-radius: 8px; height: 400px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
