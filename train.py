@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import csv
 import numpy as np
 from sklearn.neighbors import KNeighborsClassifier
@@ -44,3 +45,6 @@ rf.fit(X, y_reg)
 joblib.dump(knn, 'knn_model.pkl')
 joblib.dump(rf, 'rf_model.pkl')
 print("Models successfully trained and exported!")
+=======
+##this is to train the model 
+>>>>>>> ba26fe0470a7822ce1ac4f6961b9bdb29b0292ae
