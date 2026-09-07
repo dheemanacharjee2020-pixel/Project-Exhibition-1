@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Irrigation Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="dashboard">
+        <h1>Intelligence Engine Dashboard</h1>
+        
+        <div class="metrics">
+            <div class="card"><h3>Soil Status</h3><p id="soil-state">--</p></div>
+            <div class="card"><h3>Required Volume</h3><p id="water-vol">-- ml</p></div>
+            <div class="card highlight"><h3>Pump Status</h3><p id="pump-status">--</p></div>
+        </div>
+
+        <div class="chart-container">
+            <canvas id="telemetryChart"></canvas>
+        </div>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>
