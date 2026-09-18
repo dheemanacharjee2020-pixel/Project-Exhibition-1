@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Irrigation Dashboard</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="/static/style.css">
+    
+    <!-- This tells Flask to dynamically locate your CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <div class="dashboard">
@@ -15,12 +17,16 @@
             <div class="card"><h3>Soil Status</h3><p id="soil-state">--</p></div>
             <div class="card"><h3>Required Volume</h3><p id="water-vol">-- ml</p></div>
             <div class="card highlight"><h3>Pump Status</h3><p id="pump-status">--</p></div>
+            <div class="card"><h3>Rainfall</h3><p id="rain-val">-- mm</p></div>
+            <div class="card"><h3>Soil pH</h3><p id="ph-val">--</p></div>
         </div>
 
         <div class="chart-container">
             <canvas id="telemetryChart"></canvas>
         </div>
     </div>
-    <script src="/static/script.js"></script>
+    
+    <!-- This tells Flask to dynamically locate your JavaScript -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

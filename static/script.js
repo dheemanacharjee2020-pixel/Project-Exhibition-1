@@ -4,8 +4,11 @@ const telemetryChart = new Chart(ctx, {
     data: {
         labels: [],
         datasets: [
-            { label: 'Moisture (%)', borderColor: '#3498db', data: [] },
-            { label: 'Temperature (°C)', borderColor: '#e74c3c', data: [] }
+            { label: 'Humidity (%)', borderColor: '#3498db', data: [] },
+            { label: 'Temperature (°C)', borderColor: '#e74c3c', data: [] },
+            // Two new lines for Rainfall and pH
+            { label: 'Rainfall (mm)', borderColor: '#9b59b6', data: [] },
+            { label: 'pH Level', borderColor: '#f1c40f', data: [] }
         ]
     },
     options: { responsive: true, maintainAspectRatio: false }
@@ -20,12 +23,18 @@ async function fetchTelemetry() {
         document.getElementById('soil-state').innerText = data.state;
         document.getElementById('water-vol').innerText = data.volume_ml;
         document.getElementById('pump-status').innerText = data.pump;
+        // Update the new cards
+        document.getElementById('rain-val').innerText = data.rainfall;
+        document.getElementById('ph-val').innerText = data.ph;
         
         // Update Chart
         const timeNow = new Date().toLocaleTimeString();
         telemetryChart.data.labels.push(timeNow);
-        telemetryChart.data.datasets[0].data.push(data.moisture);
+        
+        telemetryChart.data.datasets[0].data.push(data.humidity);
         telemetryChart.data.datasets[1].data.push(data.temperature);
+        telemetryChart.data.datasets[2].data.push(data.rainfall);
+        telemetryChart.data.datasets[3].data.push(data.ph);
         
         // Keep chart clean (max 10 points)
         if (telemetryChart.data.labels.length > 10) {
